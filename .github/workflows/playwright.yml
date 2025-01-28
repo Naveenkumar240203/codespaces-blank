@@ -3,14 +3,14 @@ name: Playwright Tests with GUI
 on:
   push:
     branches:
-      - main  # Triggers the workflow on pushing to the main branch
+      - main  # Trigger on push to main branch
   pull_request:
     branches:
-      - main  # Triggers the workflow on pull requests to the main branch
+      - main  # Trigger on pull request to main branch
 
 jobs:
   test:
-    runs-on: ubuntu-latest  # Use the latest Ubuntu runner for the workflow
+    runs-on: ubuntu-latest  # Use Ubuntu as the runner
 
     steps:
       # Step 1: Checkout the code from the repository
@@ -21,22 +21,21 @@ jobs:
       - name: Set up Node.js
         uses: actions/setup-node@v2
         with:
-          node-version: '16'  # Use Node.js version 16 or adjust according to your project
+          node-version: '16'  # Specify Node.js version
 
-      # Step 3: Install dependencies (Playwright and other necessary packages)
+      # Step 3: Install dependencies
       - name: Install dependencies
         run: |
           npm install
-          npm install playwright  # Install Playwright to run the tests
+          npm install playwright  # Install Playwright
 
-      # Step 4: Set up Xvfb for GUI support
-      - name: Set up Xvfb (X virtual framebuffer)
-        run: sudo apt-get install -y xvfb  # Install Xvfb to simulate the display
+      # Step 4: Install Xvfb (X Virtual Framebuffer)
+      - name: Install Xvfb
+        run: sudo apt-get install -y xvfb
 
-      # Step 5: Run Playwright tests with Xvfb
+      # Step 5: Run Playwright tests with GUI support
       - name: Run Playwright tests
         run: |
-          Xvfb :99 &  # Start the virtual display
+          Xvfb :99 &  # Start Xvfb (virtual display)
           export DISPLAY=:99  # Set the display environment variable
           npx playwright test  # Run Playwright tests
-  
