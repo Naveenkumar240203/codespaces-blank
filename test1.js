@@ -7,6 +7,7 @@ const { chromium } = require('playwright');
   await page.goto('https://example.com');
   await page.waitForTimeout(2000);  
 
+  console.log("Today is my first day");
   console.log(await page.title());
   await browser.close();
 })();
