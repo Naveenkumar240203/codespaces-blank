@@ -1,13 +1,14 @@
-const { chromium } = require('playwright');
+// 1️⃣ Variables and Data Types
+let name = "John";  // String
+const age = 25;     // Number
+let isStudent = true; // Boolean
+let score = null;   // Null
+let city;           // Undefined
 
-(async () => {
-  const browser = await chromium.launch({  // Make sure the browser is launched with a GUI
-  });
-  const page = await browser.newPage();
-  await page.goto('https://example.com');
-  await page.waitForTimeout(2000);  
+console.log("Name:", name);
+console.log("Age:", age);
+console.log("Is Student?", isStudent);
+console.log("Score:", score);
+console.log("City:", city); // Undefined
 
-  console.log("Today is my first day");
-  console.log(await page.title());
-  await browser.close();
-})();
+

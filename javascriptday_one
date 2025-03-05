@@ -1,0 +1,58 @@
+let readline = require("readline-sync");  
+
+
+
+let userName = readline.question("Enter your name: ");
+
+console.log("My name is " + userName)
+
+let userAge = readline.questionInt("Enter your age: ");
+
+console.log("My age is " + userAge)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+let aa,bb,c,d,e,f,g,h;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+aa=1
+bb=5
